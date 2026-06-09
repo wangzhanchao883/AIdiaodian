@@ -1,0 +1,27 @@
+{
+  "appId": "com.fishing.ai",
+  "appName": "AI钓点鱼情预测",
+  "webDir": "public",
+  "server": {
+    "androidScheme": "http",
+    "hostname": "localhost",
+    "cleartext": true
+  },
+  "plugins": {
+    "Camera": {
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+    },
+    "Geolocation": {
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"]
+    },
+    "SplashScreen": {
+      "showSpinner": true,
+      "androidScaleType": "CENTER_CROP"
+    }
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webViewUserAgent": "Mozilla/5.0 AIDiaoDian"
+  }
+}
