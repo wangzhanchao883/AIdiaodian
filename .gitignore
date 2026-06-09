@@ -1,0 +1,13 @@
+node_modules/
+.env
+android/.gradle/
+android/build/
+android/app/build/
+android/app/src/main/assets/public/
+android/capacitor-cordova-android-plugins/
+android/capacitor-android/
+.cxx/
+*.log
+.DS_Store
+Thumbs.db
+AIdiaodianapp/
