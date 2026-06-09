@@ -1,0 +1,445 @@
+/* ========== 基础样式 ========== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 100%);
+  min-height: 100vh;
+  color: #333;
+  padding-bottom: 60px;
+}
+
+/* ========== 导航栏 ========== */
+.nav-bar {
+  background: #fff;
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.nav-tab {
+  flex: 1;
+  text-align: center;
+  padding: 14px 0 12px;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-weight: 600;
+  border: none;
+  background: none;
+}
+.nav-tab.active { color: #2e7d32; font-weight: 700; }
+.nav-tab .nav-icon { font-size: 26px; display: block; margin-bottom: 2px; }
+
+/* ========== 页面容器 ========== */
+#pageContainer, .page-container {
+  padding: 12px 16px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+/* ========== 卡片 ========== */
+.home-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.home-card h2 {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* ========== 拍照区域 ========== */
+.photo-area {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #c8e6c9;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  background: #f9fbe7;
+  transition: border-color 0.2s;
+}
+.photo-area:hover { border-color: #66bb6a; }
+.photo-area.has-image { border: none; height: auto; }
+.photo-area img { width: 100%; border-radius: 10px; display: block; }
+.photo-placeholder { font-size: 48px; margin-bottom: 8px; }
+.photo-text { font-size: 14px; color: #888; }
+
+/* ========== 定位信息 ========== */
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+  padding: 8px 0;
+}
+.location-info .icon { font-size: 18px; }
+
+/* ========== 天气网格 ========== */
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.weather-item {
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* ========== 分析按钮 ========== */
+.btn-analyze {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #43a047, #1e88e5);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: opacity 0.2s;
+}
+.btn-analyze:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-analyze:active { opacity: 0.8; }
+
+/* ========== 报告卡片 ========== */
+.report-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.report-card h2 {
+  font-size: 15px;
+  color: #2e7d32;
+  margin-bottom: 12px;
+}
+
+/* ========== 评分横幅 ========== */
+.score-banner {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+.score-banner.score-good { background: linear-gradient(135deg, #43a047, #2e7d32); }
+.score-banner.score-mid { background: linear-gradient(135deg, #fb8c00, #ef6c00); }
+.score-banner.score-low { background: linear-gradient(135deg, #e53935, #c62828); }
+
+.score-big { font-size: 48px; font-weight: 700; line-height: 1; }
+.score-unit { font-size: 20px; font-weight: 400; opacity: 0.8; }
+.score-stars { font-size: 22px; margin: 6px 0 4px; letter-spacing: 2px; }
+.score-label { font-size: 14px; opacity: 0.9; }
+
+/* ========== 报告摘要 ========== */
+.report-summary {
+  background: #f1f8e9;
+  border-left: 4px solid #43a047;
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* ========== 报告分区 ========== */
+.report-section {
+  margin-bottom: 14px;
+  border: 1px solid #e8f5e9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #e8f5e9, #e3f2fd);
+  font-weight: 600;
+  font-size: 14px;
+}
+.section-icon { font-size: 18px; }
+.section-title { flex: 1; color: #2e7d32; }
+.section-score {
+  background: #43a047;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.section-body {
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444;
+}
+.section-body strong { color: #1565c0; }
+
+/* ========== 表格行 ========== */
+.table-row {
+  display: flex;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+}
+.table-row span { flex: 1; }
+.table-row:first-child { font-weight: 600; color: #333; }
+
+/* ========== 列表项 ========== */
+.list-item { padding: 3px 0; }
+.list-item-num { padding: 4px 0; color: #1565c0; font-weight: 500; }
+.spacer { height: 8px; }
+
+/* ========== 保存按钮区域 ========== */
+.report-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.btn-save-report {
+  flex: 1;
+  padding: 14px;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-save-report:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-save-report.saved { background: #888; }
+.btn-save-report:active { opacity: 0.8; }
+.report-actions .btn-analyze { margin-bottom: 0; flex: 1; }
+
+/* ========== 记录页 ========== */
+.history-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+.history-empty .icon { font-size: 48px; margin-bottom: 12px; }
+.history-list { display: flex; flex-direction: column; gap: 10px; }
+
+.history-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+.history-item:active { box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+.history-item-left { margin-right: 12px; flex-shrink: 0; }
+.history-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.history-photo-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.history-item-right { flex: 1; min-width: 0; }
+.history-item-date { font-size: 12px; color: #999; margin-bottom: 2px; }
+.history-item-loc { font-size: 13px; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.history-item-weather { font-size: 11px; color: #888; margin-top: 2px; }
+.history-item-score { margin-top: 4px; }
+.mini-score {
+  display: inline-block;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btn-delete-record {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+.btn-delete-record:active { opacity: 1; }
+
+/* ========== 记录详情 ========== */
+.record-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.btn-back {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #666;
+}
+.btn-back:active { background: #f5f5f5; }
+.record-detail-date { font-size: 13px; color: #999; }
+.record-detail-info {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.btn-delete-full {
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #ffcdd2;
+  color: #e53935;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+.btn-delete-full:active { background: #ffebee; }
+
+/* ========== 设置页 ========== */
+.settings-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.settings-card h2 {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 12px;
+}
+.form-group {
+  margin-bottom: 12px;
+}
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+.form-group input:focus { border-color: #66bb6a; }
+
+.btn-save, .btn-test, .btn-clear-data {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.btn-save {
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  color: #fff;
+}
+.btn-test {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+.btn-clear-data {
+  background: #ffebee;
+  color: #e53935;
+}
+
+/* ========== Toast ========== */
+#toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-60px);
+  background: rgba(0,0,0,0.78);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+#toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ========== Loading ========== */
+#loadingOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 998;
+}
+#loadingText {
+  margin-top: 14px;
+  color: #fff;
+  font-size: 16px;
+}
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ========== 响应式 ========== */
+@media (min-width: 600px) {
+  #pageContainer { padding: 20px 24px; }
+}
